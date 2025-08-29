@@ -16,6 +16,10 @@ API para geração de QR Codes a partir de URLs, construída com FastAPI, seguin
 make init
 ```
 
+### Executando externamente
+
+Acesse: [https://qr-code-generation-zih9.onrender.com/docs](https://qr-code-generation-zih9.onrender.com/docs) para a documentação interativa (Swagger).
+
 ### Executando localmente
 
 ```sh
