@@ -1,0 +1,73 @@
+[project]
+name = "qr-code-generation"
+version = "0.1.0"
+description = "A simple API in Python 3.12 with Flask and Swagger for generating QR Codes from links. The project focuses on best practices, organization, and extensibility, with a vision to evolve into collecting metrics such as device, location, and scan time."
+authors = [
+    {name = "Ernandes Azevedo Junior <ernandesazevedojunior@gmail.com>"}
+]
+readme = "README.md"
+requires-python = ">=3.12,<4.0"
+dependencies = ["pydantic (>=2.11.7,<3.0.0)", "pandas (>=2.3.2,<3.0.0)", "fastapi (>=0.116.1,<0.117.0)", "uvicorn (>=0.35.0,<0.36.0)", "httpx (>=0.28.1,<0.29.0)", "qrcode (>=8.2,<9.0)", "pillow (>=11.3.0,<12.0.0)"]
+
+
+[tool.poetry.group.dev.dependencies]
+pytest = "^8.4.1"
+pytest-cov = "^6.2.1"
+black = "^25.1.0"
+isort = "^6.0.1"
+
+[tool.black]
+# https://github.com/psf/black
+target-version = ["py312"]
+line-length = 88
+color = true
+
+exclude = '''
+/(
+    \.git
+    | \.hg
+    | \.mypy_cache
+    | \.tox
+    | \.venv
+    | _build
+    | buck-out
+    | build
+    | dist
+    | env
+    | venv
+)/
+'''
+
+[tool.isort]
+# https://github.com/timothycrosley/isort/
+py_version = 312
+line_length = 88
+
+known_typing = [
+  "typing",
+  "types",
+  "typing_extensions",
+  "mypy",
+  "mypy_extensions",
+]
+sections = [
+  "FUTURE",
+  "TYPING",
+  "STDLIB",
+  "THIRDPARTY",
+  "FIRSTPARTY",
+  "LOCALFOLDER",
+]
+include_trailing_comma = true
+profile = "black"
+multi_line_output = 3
+indent = 4
+color_output = true
+
+
+[build-system]
+requires = ["poetry-core>=2.0.0,<3.0.0"]
+build-backend = "poetry.core.masonry.api"
+
+
+
